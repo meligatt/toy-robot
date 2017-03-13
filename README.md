@@ -42,4 +42,6 @@ LEFT
 MOVE
 REPORT
 Output: 3,3,NORTH
- 
+
+# Sources used:
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
