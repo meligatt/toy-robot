@@ -1,5 +1,4 @@
 // JS
-
 //Generate the 2d array that is the game board
 //Draw the board from the 2d array
 // position robot on the board
@@ -16,12 +15,14 @@ class Robot {
     this.placed= false;
     this.directions = ['NORTH', 'EAST', 'SOUTH', 'WEST'];
     this.board = board;
+    this.FIRST_INDEX = 0;
+    this.LAST_INDEX = this.directions.length - 1;
     this.init("hello", this.x, this.y, this.facing);
     return this;
   }
 
   init (greeting, x, y, f){
-    console.log(`${greeting}, a droid called ${this.name} has been created!`);
+    console.log(`[${greeting}], a droid called [${this.name}] has been created and placed at [${this.x}, ${this.y}] facing [${this.facing}]!`);
     this.place(x,y,f);
   }
 
@@ -33,11 +34,11 @@ class Robot {
   }
 
   move() {
-    if ( this.board.validatePosition(this.x, this.y) && this.directions.includes(this.facing) ) {
+    if ( this.board.validatePosition(this.x, this.y) && this._validateDirection(this.facing) ) {
       switch (this.facing) {
         case 'NORTH':
-             this.y += 1;
-          break;
+        this.y += 1;
+        break;
         case 'SOUTH':
         this.y -= 1;
         break;
@@ -45,14 +46,15 @@ class Robot {
         this.x -= 1
         break;
         case 'EAST':
+        console.log('case EAST');
         this.x += 1
         break;
         default:
         return false;
       }
-   } else {
-     console.log(`position: [${this.x},${this.y + 1}] and facing: [${this.facing}] is not valid!`);
-   }
+    } else {
+      console.log(`position: [${this.x},${this.y + 1}] and facing: [${this.facing}] is not valid!`);
+    }
   }
 
   left (){
@@ -64,17 +66,25 @@ class Robot {
   }
 
   _turn(turnDirection){
-    let index, newDirectionIndex;
+    let currentIndex, newDirectionIndex;
 
-    if (turnDirection === 'LEFT'){
-      index = this.directions.findIndex(this._isEqualToDirection.bind(this));
-      newDirectionIndex = index + 1;
+    currentIndex = this.directions.findIndex(this._isEqualToDirection.bind(this));
+
+    if (turnDirection === 'RIGHT'){
+      if  ((currentIndex + 1) >= this.directions.length)   {
+        newDirectionIndex = this.FIRST_INDEX;
+      } else {
+        newDirectionIndex = currentIndex + 1;
+      }
     } else {
-      // RIGHT
-      index = this.directions.findIndex(this._isEqualToDirection.bind(this));
-      newDirectionIndex = index - 1;
+      if ((currentIndex - 1) < 0) {
+        newDirectionIndex = this.LAST_INDEX;
+      } else {
+        newDirectionIndex = currentIndex - 1;
+      }
     }
     this.facing = this.directions[newDirectionIndex];
+    console.log("_turn: ", this.facing);
   }
 
   _isEqualToDirection(element){
@@ -82,7 +92,10 @@ class Robot {
   }
 
   _validateDirection(f){
-    // todo
+    if (!(this.directions.includes(f))){
+      return false;
+    }
+    return true;
   }
 
   report () {
@@ -97,7 +110,8 @@ class Board {
   }
 
   validatePosition(x, y){
-    if (!(x < this.size && y < this.size)) {
+    console.log("validatePosition", x, y);
+    if (!(x <= this.size && y <= this.size)) {
       return false;
     }
     return true;
@@ -107,15 +121,9 @@ class Board {
 //creating an instance of the Robot class:
 const boardGame = new Board(5);
 const droid = new Robot("BB8", 2, 3, "NORTH", boardGame);
-droid.report();
 droid.move();
 droid.move();
-droid.move();
-
-droid.report();
-droid.left();
-droid.left();
-droid.left();
 droid.right();
 droid.report();
-// robot.render();
+droid.move();
+droid.report();
