@@ -7,9 +7,8 @@ The robot is free to roam around the surface of the table, but must be prevented
 
 * Create an application that can read in commands of the following form -
   PLACE X,Y,F
-  MOVE
-  LEFT
-  RIGHT
+  MOVE  
+  LEFT | RIGHT
   REPORT
 * Where PLACE will put the toy robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST. The origin (0,0) can be considered to be the SOUTH WEST most corner.
 * It is required that the first command to the robot is a PLACE command, after that, any sequence of commands may be issued, in any order, including another PLACE command. The application should discard all commands in the  sequence until a valid PLACE command has been executed.
