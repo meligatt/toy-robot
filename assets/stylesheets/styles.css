@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
 }
-.flex-grid-five {
+.flex-grid-fifth {
   display: flex;
   justify-content: space-between;
 }
@@ -18,7 +18,7 @@
   width: 32%;
 }
 
-.flex-grid-five .col {
+.flex-grid-fifth .col {
   width: 20%;
 }
 
@@ -43,6 +43,7 @@ body {
   margin: 0 0 20px 0;
 }
 .col {
-  background: salmon;
+  background: beige;
   padding: 20px;
+  border: 1px solid black;
 }
