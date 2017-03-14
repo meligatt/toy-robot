@@ -1,4 +1,3 @@
-/* Class Robot */
 class Robot {
   constructor (name, x, y, f, board){
     this.name = name;
@@ -163,38 +162,3 @@ class Robot {
   }
 
 }
-
-/* Class Board */
-class Board {
-  constructor(size){
-    this.size = size;
-  }
-
-  validatePosition(x, y){
-    if ( !(x >= 0 && y >= 0 && x <= this.size && y <= this.size) ) {
-      return false;
-    }
-    return true;
-  }
-}
-
-// -----------------------------------------------------------------------------
-//creating an instance of the Robot class:
-const boardGame = new Board(5);
-const droid = new Robot("BB8", 0, 0, "WEST", boardGame);
-
-droid.place(0,0,'EAST');
-
-droid.left();
-droid.right();
-droid.right();
-droid.right();
-droid.left();
-droid.left();
-droid.move();
-droid.place(1,0,'NORTH');
-droid.right();
-droid.left();
-droid.place(2,2,'NORTH');
-
-droid.report();
