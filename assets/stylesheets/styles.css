@@ -1,21 +1,41 @@
 /*CSS*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+}
+
+.robot-grid-container {
+  background: linear-gradient(45deg, #000 8%, #0d0f2b 50%, #0c1454 100%);
+}
+.wrap {
+  padding: 20px;
+}
+
 .flex-grid {
   display: flex;
+  margin: 0;
 }
+
 .flex-grid .col {
   flex: 1;
 }
-.flex-grid-thirds {
+/*if we need grid in thirds*/
+
+/*.flex-grid-thirds {
   display: flex;
   justify-content: space-between;
-}
+}*/
+
+/*.flex-grid-thirds .col {
+  width: 32%;
+}*/
+
 .flex-grid-fifth {
   display: flex;
   justify-content: space-between;
-}
-
-.flex-grid-thirds .col {
-  width: 32%;
 }
 
 .flex-grid-fifth .col {
@@ -33,17 +53,25 @@
   }
 }
 
-* {
-  box-sizing: border-box;
-}
-body {
-  padding: 20px;
-}
-.flex-grid {
-  margin: 0 0 20px 0;
-}
 .col {
-  background: beige;
-  padding: 20px;
-  border: 1px solid black;
+  padding: 5px;
+  min-height: 50px;
+  width: 100%;
+  border: 1px dashed rgba(255,255,255,0.2);
+}
+
+@media (min-width:768px) {
+  .col {
+    padding: 10px;
+    width: 100%;
+    min-height: 100px;
+    border: 1px dashed rgba(255,255,255,0.2);
+  }
+}
+
+.col img {
+  width: 70%;
+  height: auto;
+  display:block;
+  margin:auto;
 }
