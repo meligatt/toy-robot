@@ -1,23 +1,18 @@
 // create the instances of baord and robot classes.
+console.log("*****************************");
+console.log("Welcome to Tatooine, to start using this app, use the instance 'droid' and its methods: .move, .place, .left, .right");
+console.log(" examples: \n "  +
+            "droid.place(0,0,'EAST') \n " +
+            "droid.left() \n "  +
+            "droid.move() \n "  +
+            "droid.right() \n "  +
+            "droid.report()");
+console.log("*****************************");
 const boardGame = new Board(5);
-const droid = new Robot("BB8", 0, 0, "WEST", boardGame);
-
-// invoke robot methods:
-droid.left();
-droid.right();
-droid.right();
-droid.right();
-droid.place(0,0,'EAST');
-droid.left();
-droid.left();
-droid.move();
-droid.place(1,0,'NORTH');
-droid.right();
-droid.right();
-droid.right();
-droid.right();
-droid.left();
-droid.place(2,2,'NORTH');
-
-// report:
-droid.report();
+const droid = new Robot("R2D2", 0, 0, "NORTH", boardGame);
+/*
+droid.left()
+droid.move()
+droid.right()
+droid.report()
+*/
