@@ -69,10 +69,10 @@ class Robot {
           default:
           return false;
         }
-          this.render();
-        } else {
-          console.log(`position: [${this.x},${this.y + 1}] and facing: [${this.facing}] is not valid!`);
-        }
+        this.render();
+      } else {
+        console.log(`position: [${this.x},${this.y + 1}] and facing: [${this.facing}] is not valid!`);
+      }
 
     } else {
       console.log("A droid needs to be placed first!");
@@ -106,6 +106,8 @@ class Robot {
       }
     }
     this.facing = this.directions[newDirectionIndex];
+    this._cleanDOMPosition(false);
+    this.render();
   }
 
   _isEqualToDirection(element){
@@ -120,32 +122,48 @@ class Robot {
   }
 
   render() {
-    console.log("render",this.x, this.y);
     const row = document.querySelector(`.row${this.y}`);
     const cell = row.querySelector(`.col${this.x}`);
-    cell.textContent = 'ROBOT HERE!';
+    const imgElement = document.createElement("img");
+    imgElement.setAttribute("src", "assets/images/r2.png");
+    imgElement.style.transform = null;
+
+    switch (this.facing) {
+      case 'NORTH':
+      imgElement.style.transform = null;
+      break;
+      case 'EAST':
+      imgElement.style.transform = `rotate(90deg)`;
+      break;
+      case 'SOUTH':
+      imgElement.style.transform = `rotate(180deg)`;
+      break;
+      case 'WEST':
+      imgElement.style.transform = `rotate(270deg)`;
+      break;
+      default:
+    }
+    cell.appendChild(imgElement);
   }
 
   _cleanDOMPosition(replaced){
-    // getting the class name for row and col element:
     if (replaced === false) {
-    const row = document.querySelector(`.row${this.y}`);
-    const cell = row.querySelector(`.col${this.x}`);
-    cell.textContent = '';
-    console.log("replaced false", cell);
-  } else {
-    const row = document.querySelector(`.row${this.lastY}`);
-    const cell = row.querySelector(`.col${this.lastX}`);
-    cell.textContent = '';
-    console.log("replaced true ", cell);
+      const row = document.querySelector(`.row${this.y}`);
+      const cell = row.querySelector(`.col${this.x}`);
+      cell.textContent = '';
+    } else {
+      const row = document.querySelector(`.row${this.lastY}`);
+      const cell = row.querySelector(`.col${this.lastX}`);
+      cell.textContent = '';
+    }
   }
-}
 
   report () {
     console.log(`Output: [${this.name}] is placed: [${this.placed}], at [${this.x},${this.y}] facing [${this.facing}]`);
   }
 
 }
+
 /* Class Board */
 class Board {
   constructor(size){
@@ -163,16 +181,20 @@ class Board {
 // -----------------------------------------------------------------------------
 //creating an instance of the Robot class:
 const boardGame = new Board(5);
-const droid = new Robot("BB8", 0, 0, "SOUTH", boardGame);
-droid.move();
-droid.left();
-droid.left();
-droid.move();
-droid.place(3,4,'EAST');
-droid.move();
-droid.move();
-droid.right();
-droid.move();
+const droid = new Robot("BB8", 0, 0, "WEST", boardGame);
+
 droid.place(0,0,'EAST');
+
+droid.left();
+droid.right();
+droid.right();
+droid.right();
+droid.left();
+droid.left();
+droid.move();
+droid.place(1,0,'NORTH');
+droid.right();
+droid.left();
+droid.place(2,2,'NORTH');
 
 droid.report();

@@ -1,5 +1,6 @@
 # toy-robot
-toy robot Grid
+* Project: toy robot Grid
+* author: Melissa Gattoni https://github.com/meligatt
 
 * Robot Movement Description:
 The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units. There are no other obstructions on the table surface.
@@ -22,6 +23,7 @@ The robot is free to roam around the surface of the table, but must be prevented
 The toy robot must not fall off the table during movement. This also includes the initial placement of the toy robot. Any move that would cause the robot to fall must be ignored.
 
 * Example Input and Output:
+
 a)----------------
 PLACE 0,0,NORTH
 MOVE
@@ -45,3 +47,5 @@ Output: 3,3,NORTH
 
 # Sources used:
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+* https://developer.mozilla.org/en-US/docs/Web/API/Element
+* https://css-tricks.com/dont-overthink-flexbox-grids/
