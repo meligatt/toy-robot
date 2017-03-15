@@ -3,8 +3,7 @@
 * author: Melissa Gattoni https://github.com/meligatt (meligatt@gmail.com)
 
 * preview:
-![Image of Robot app](https://github.com/meligatt/toy-robot/blob/develop/help/Screen%20Shot%202017-03-15%20at%208.23.41%20pm.png)
-[[https://github.com/meligatt/toy-robot/blob/develop/help/Screen%20Shot%202017-03-15%20at%208.23.41%20pm.png|alt=octocat]]
+![Image of Robot app](https://github.com/meligatt/toy-robot/blob/master/help/robot-preview.png)
 
 * Robot Movement Description:
 The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units. There are no other obstructions on the table surface.
