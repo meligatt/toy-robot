@@ -2,6 +2,10 @@
 * Project: toy robot Grid
 * author: Melissa Gattoni https://github.com/meligatt (meligatt@gmail.com)
 
+* preview:
+![Image of Robot app](https://github.com/meligatt/toy-robot/blob/develop/help/Screen%20Shot%202017-03-15%20at%208.23.41%20pm.png)
+[[https://github.com/meligatt/toy-robot/blob/develop/help/Screen%20Shot%202017-03-15%20at%208.23.41%20pm.png|alt=octocat]]
+
 * Robot Movement Description:
 The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units. There are no other obstructions on the table surface.
 The robot is free to roam around the surface of the table, but must be prevented from falling to destruction. Any movement that would result in the robot falling from the table must be prevented, however further valid movement commands must still be allowed.
