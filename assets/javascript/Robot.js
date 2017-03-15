@@ -4,23 +4,26 @@ class Robot {
     this.x = x;
     this.y = y;
     this.facing = f;
+    this.board = board;
+
     this.placed= false;
     this.directions = ['NORTH', 'EAST', 'SOUTH', 'WEST'];
-    this.board = board;
     this.FIRST_INDEX = 0;
     this.LAST_INDEX = this.directions.length - 1;
     this.init("hello", this.x, this.y, this.facing);
+    this._validateDirection = this._validateDirection.bind(this);
+    this._cleanDOMPosition = this._cleanDOMPosition.bind(this);
     return this;
   }
 
   init (greeting, x, y, f){
-    this.place(x,y,f);
+
+   this.place(x,y,f);
     console.log(`[${greeting}], a droid called [${this.name}] has been created and placed at [${x}, ${y}] facing [${f}]!`);
   }
 
   place (x, y, f){
     if ( this.board.validatePosition(this.x, this.y) && this._validateDirection(this.facing) ) {
-
       // last x,y, facing
       this.lastX = this.x;
       this.lastY = this.y;
@@ -38,6 +41,7 @@ class Robot {
     } else {
       return (this.placed = false);
     }
+    return this;
   }
 
   move() {
@@ -114,7 +118,10 @@ class Robot {
   }
 
   _validateDirection(f){
-    if (!(this.directions.includes(f))){
+    // if (!(this.directions.includes(f))){
+    //   return false;
+    // }
+    if (!(this.directions.indexOf(f) >= 0)){
       return false;
     }
     return true;
@@ -162,3 +169,4 @@ class Robot {
   }
 
 }
+module.exports = Robot;

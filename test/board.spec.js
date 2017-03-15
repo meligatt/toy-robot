@@ -1,12 +1,18 @@
 // Import chai.
 let chai = require('chai'),
   path = require('path');
+ let jsdom = require('jsdom');
+
+global.document = jsdom.jsdom('<body></body>');
+global.window = document.defaultView;
+
 
 // Tell chai that we'll be using the "should" style assertions.
+
 chai.should();
 
 // Import the Rectangle class.
-let Board = require(path.join(__dirname, '../assets/javascript/', 'Board'));
+let Board = require(path.join(__dirname, '../lib/', 'Board'));
 
 describe('Board tests > ', () => {
   describe('validation tests', () => {
@@ -18,8 +24,8 @@ describe('Board tests > ', () => {
     });
 
     it('instance of Board should only accept size equal to 5', () => {
-      let aBoard = new Board(6);
-      chai.assert.equal(aBoard.size, 5, 'board.size is equal to 5');
+      let anotherBoard = new Board(6);
+      chai.assert.equal(anotherBoard.size, 5, 'board.size is equal to 5');
 
     });
 

@@ -31,3 +31,6 @@ npm-debug.log
 
 #bower
 bower_components
+
+# .gitignore - the files to not push via git
+lib

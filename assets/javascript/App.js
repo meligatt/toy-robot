@@ -9,7 +9,6 @@ console.log(" examples: \n "  +
             "droid.report()");
 console.log("*****************************");
 const boardGame = new Board(5);
-console.log("boardGame.size",boardGame.size);
 const droid = new Robot("R2D2", 0, 0, "NORTH", boardGame);
 /*
 droid.left()
