@@ -169,4 +169,4 @@ class Robot {
   }
 
 }
-module.exports = Robot;
+// module.exports = Robot;
