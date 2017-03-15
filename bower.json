@@ -1,0 +1,20 @@
+{
+  "name": "Test",
+  "version": "1.0.0",
+  "homepage": "https://github.com/meligatt/toy-robot",
+  "authors": [
+    "meligatt@gmail.com"
+  ],
+  "description": "bower implementation for running test with mocha and chai",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

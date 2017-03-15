@@ -1,6 +1,6 @@
 # toy-robot
 * Project: toy robot Grid
-* author: Melissa Gattoni https://github.com/meligatt
+* author: Melissa Gattoni https://github.com/meligatt (meligatt@gmail.com)
 
 * Robot Movement Description:
 The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units. There are no other obstructions on the table surface.
@@ -51,3 +51,5 @@ c)
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 * https://developer.mozilla.org/en-US/docs/Web/API/Element
 * https://css-tricks.com/dont-overthink-flexbox-grids/
+* https://docs.npmjs.com/files/package.json
+* http://chaijs.com/
