@@ -2,20 +2,20 @@
 * Project: toy robot Grid
 * author: Melissa Gattoni https://github.com/meligatt (meligatt@gmail.com)
 
-* preview:
+# Preview:
 ![Image of Robot app](https://github.com/meligatt/toy-robot/blob/master/help/robot-preview.png)
 
-* Problems that are currently work in progress:
+# Problems that are currently work in progress:
 - Tests are not 100% passing.
 - I'm trying to figure out what's better, run the test in the browser, or in node terminal.
 - how to mock the DOM (with JSDOM module or similar) in browser based tests.
 
-* Prerequisites:
+# Prerequisites:
 - to have NodeJs installed in your machine.
 - to have npm for node packages management.
 - Chrome browser (or any modern one).
 
-* Instructions:
+# Instructions:
 - open your terminal and cd toy-robot.
 - in your terminal, run "npm install" to install all the npm packages described in package.json.
 - from toy-robot folder run httpster or any software you use to serve the files. (npm install httpster)
@@ -23,7 +23,7 @@
 - to see the robot working, open your browser on: localhost:3333 (or the port assigned) and open the Chrome console.
 - in this console follow the instructions that are printed in here, and start playing around with R2D2! :)
 
-* Technologies used:
+# Technologies used:
 - ES6 for logic
 - Npm packages (babel for translating from es6 to es5)
 - Flexbox for frontend
@@ -31,7 +31,7 @@
 - Mocha test framework and  Chai library for the tests.
 - Git (sourcetree ui) for versioning system.
 
-* Robot Movement Description:
+# Robot Movement Description:
 
 The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units. There are no other obstructions on the table surface.
 The robot is free to roam around the surface of the table, but must be prevented from falling to destruction. Any movement that would result in the robot falling from the table must be prevented, however further valid movement commands must still be allowed.
@@ -55,7 +55,7 @@ The robot is free to roam around the surface of the table, but must be prevented
 * Constraints:
 The toy robot must not fall off the table during movement. This also includes the initial placement of the toy robot. Any move that would cause the robot to fall must be ignored.
 
-* Example Input and Output:
+# Example Input and Output:
 a) instructions:
 - PLACE 0,0,NORTH
 - MOVE
